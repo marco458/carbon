@@ -1,0 +1,11 @@
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     '%env(WKHTMLTOPDF_PATH)%'
+        options:
+            debug-javascript: true
+            enable-javascript: true
+            javascript-delay: 6000
+            no-stop-slow-scripts: true
+            images: true
+            lowquality: false

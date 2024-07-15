@@ -1,0 +1,75 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+    locale: 'en'
+#    sentry.dsn: "%env(SENTRY_DSN)%"
+    mail_from: 'test@email.com'
+    mail_reply_to: 'replyto@email.com'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+        bind:
+            $mailFrom: '%mail_from%'
+            $mailReplyTo: '%mail_reply_to%'
+            $persistProcessor: '@api_platform.doctrine.orm.state.persist_processor'
+            $removeProcessor: '@api_platform.doctrine.orm.state.remove_processor'
+            $appEnv: '%env(APP_ENV)%'
+            $projectDirectory: '%kernel.project_dir%'
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    Core\:
+        resource: '../src/Core'
+        exclude:
+            - '../src/Core/DependencyInjection/'
+            - '../src/Core/Entity/'
+            - '../src/Core/Kernel.php'
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    Core\DataFixtures\Faker\Provider\GenderProvider:
+        tags: [ { name: nelmio_alice.faker.provider } ]
+
+    Core\State\User\UserCollectionStateProvider:
+        tags: [ 'api_platform.state_provider' ]
+        arguments:
+            $collectionExtensions: !tagged api_platform.doctrine.orm.query_extension.collection
+
+    Core\State\User\UserItemStateProvider:
+            tags: [ 'api_platform.state_provider' ]
+
+    Core\State\Token\TokenStateProvider: ~
+        # Uncomment only if autoconfiguration is disabled
+        tags: [ 'api_platform.state_provider' ]
+
+    Core\State\User\UserStateProcessor:
+        tags: [ 'api_platform.state_processor' ]
+
+    Core\State\Token\TokenStateProcessor:
+        tags: [ 'api_platform.state_processor' ]
+
+    app.s3_client:
+        class: Aws\S3\S3Client
+        arguments:
+            -
+                endpoint: '%env(AWS_URL)%'
+                use_path_style_endpoint: true
+                version: '2006-03-01' # or 'latest'
+                region: '%env(AWS_DEFAULT_REGION)%' # 'eu-central-1' for example
+                credentials:
+                    key: '%env(AWS_ACCESS_KEY_ID)%'
+                    secret: '%env(AWS_SECRET_ACCESS_KEY)%'
+
+    app.healthcheck:
+        class: Core\Service\HealthCheckService
+        arguments: [ '@request_stack' ]
+
+    Aws\S3\S3Client: "@app.s3_client"

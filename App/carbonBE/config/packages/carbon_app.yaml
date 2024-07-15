@@ -1,0 +1,55 @@
+api_platform:
+  mapping:
+    paths:
+      - '%kernel.project_dir%/src/App/Entity'
+
+services:
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    bind:
+      $persistProcessor: '@api_platform.doctrine.orm.state.persist_processor'
+
+  App\:
+    resource: '../../src/App'
+    exclude:
+      - '../../src/App/Entity/'
+
+
+  App\Controller\:
+    resource: '../../src/App/Controller/'
+    tags: [ 'controller.service_arguments' ]
+
+
+  App\State\GasStateProcessor:
+    tags: [ 'api_platform.state_processor' ]
+
+  App\State\Factor\FactorStateProcessor:
+    tags: [ 'api_platform.state_processor' ]
+
+  App\State\Location\LocationStateProcessor:
+    tags: [ 'api_platform.state_processor' ]
+
+  App\State\GasCollectionStateProvider:
+    tags: [ 'api_platform.state_provider' ]
+    arguments:
+      $collectionExtensions: !tagged api_platform.doctrine.orm.query_extension.collection
+
+  App\State\Factor\FactorUserCollectionStateProvider:
+    tags: [ 'api_platform.state_provider' ]
+    arguments:
+      $collectionExtensions: !tagged api_platform.doctrine.orm.query_extension.collection
+
+  App\State\Location\LocationCollectionStateProvider:
+    tags: [ 'api_platform.state_provider' ]
+    arguments:
+      $collectionExtensions: !tagged api_platform.doctrine.orm.query_extension.collection
+
+doctrine:
+  orm:
+    mappings:
+      App:
+        is_bundle: false
+        dir: '%kernel.project_dir%/src/App/Entity'
+        prefix: 'App\Entity'
+        alias: App

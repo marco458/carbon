@@ -1,0 +1,207 @@
+/* home */
+.root {
+  background-color: #fff; /* White background color */
+  font-size: medium;
+}
+
+.content {
+  margin-top: 13vh;
+}
+
+.flex-content {
+  margin-top: 5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 16px; /* Gap between options */
+}
+
+.option {
+  width: 25vw;
+  height: 25vh;
+  padding: 8px;
+  margin: 20px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 20px;
+  color: black; /* Dark text color */
+  border-radius: 15px; /* Rounded corners */
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  transition: box-shadow 0.3s ease; /* Smooth transition for the shadow */
+}
+
+.option:hover {
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+.option:nth-child(2n) {
+  background-color: #2f83d6; /* Light blue background color for even options */
+}
+
+.option:nth-child(3n) {
+  background-color: #7bed7b; /* Light green background color for every third option */
+}
+
+.option > * {
+  margin: 0; /* Remove margin from children */
+}
+
+/* styles.css */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: auto;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button {
+  margin-top: 1rem;
+  align-self: flex-end;
+}
+
+
+/* factorUser */ 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: auto;
+  padding: 1rem;
+  background-color: #f1efff; 
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container .MuiFormControl-root {
+  width: 100%;
+}
+
+.form-container .MuiButton-root {
+  background-color: #4caf50; /* Green color for submit button */
+  color: white; /* White text color */
+}
+
+.form-container .MuiButton-root:hover {
+  background-color: #388e3c; /* Darker green color on hover */
+}
+
+
+/* SectorView */
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-div {
+  padding: 1rem;
+  margin: 1rem 0;
+  margin-right: 25rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.link-div:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link-p {
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.sector-view-div {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* login */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.login-paper {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* register */
+.register-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.register-paper {
+  padding: 2rem;
+  text-align: center;
+  max-width: 650px; 
+  width: 100%;
+}
+
+.register-input {
+  margin-bottom: 1rem;
+}
+
+.register-button {
+  margin-top: 1rem;
+}
+
+/* navbar */
+.appBar {
+  background-color: #1976d2; 
+  height: 4.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.appBar .MuiTypography-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-button {
+  padding-top: 0.8rem;
+}
+
+/** organization */
+/* styles.css */
+
+.container {
+  padding: 5px 20px 20px 20px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  margin-top: 20px;
+}

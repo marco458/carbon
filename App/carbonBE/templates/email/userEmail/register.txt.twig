@@ -1,0 +1,14 @@
+{% extends 'email/base.txt.twig' %}
+
+{% set email_body_title = 'Activate your account' %}
+{% set button_url = activateAccountUrl %}
+{% set button_text = 'Activate my account' %}
+{% set email_body_text = 'Use the link below to confirm your email and activate your account.' %}
+{% set email_body_bottom_text = "If you didn't request this link, you can ignore this email." %}
+
+{% block email_body %}
+    {{ parent() }}
+{% endblock email_body %}
+
+{% block app_info_box %}
+{% endblock app_info_box %}

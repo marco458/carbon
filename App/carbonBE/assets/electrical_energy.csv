@@ -1,0 +1,37 @@
+energy_type,year,sub_sector,power_plant_type,CO2,CH4,N2O,CO2eq,CO2-upstream,CH4-upstream,N2O-upstream,CO2eq-upstream,CO2-combustion,CH4-combustion,N2O-combustion,CO2eq-combustion
+Električna energija,2015,average consumption,,224.291291,0.005767,0.003251,225.325771,29.109044,0.001056,0.000448,29.259335,195.182247,0.004711,0.002803,196.066436
+Električna energija,2015,average consumption,,62.303136,0.001602,0.000903,62.590492,8.085846,0.000293,0.000124,8.127593,54.217291,0.001309,0.000779,54.462899
+Električna energija,2016,average consumption,,215.233095,0.007365,0.003353,216.342481,26.577992,0.001412,0.000469,26.744525,188.655103,0.005953,0.002884,189.597956
+Električna energija,2016,average consumption,,59.786971,0.002046,0.000931,60.095134,7.382776,0.000392,0.000130,7.429035,52.404195,0.001654,0.000801,52.666099
+Električna energija,2017,average consumption,,199.667241,0.010788,0.002842,200.744086,26.146862,0.002196,0.000460,26.334725,173.520379,0.008591,0.002382,174.409361
+Električna energija,2017,average consumption,,55.463123,0.002997,0.000790,55.762246,7.263017,0.000610,0.000128,7.315201,48.200105,0.002386,0.000662,48.447045
+Električna energija,2018,average consumption,,150.319720,0.012866,0.002933,151.482864,19.279397,0.002753,0.000511,19.497514,131.040322,0.010113,0.002421,131.985349
+Električna energija,2018,average consumption,,41.755478,0.003574,0.000815,42.078573,5.355388,0.000765,0.000142,5.415976,36.400089,0.002809,0.000673,36.662597
+Električna energija,2019,average consumption,,170.732780,0.016937,0.003651,172.208467,21.025220,0.003590,0.000637,21.301740,149.707560,0.013347,0.003014,150.906727
+Električna energija,2019,average consumption,,47.425772,0.004705,0.001014,47.835685,5.840339,0.000997,0.000177,5.917150,41.585433,0.003708,0.000837,41.918535
+Električna energija,2020,average consumption,,149.849081,0.016938,0.003181,151.200061,19.896627,0.003719,0.000607,20.169032,129.952455,0.013219,0.002574,131.031029
+Električna energija,2020,average consumption,,41.624745,0.004705,0.000883,42.000017,5.526841,0.001033,0.000169,5.602509,36.097904,0.003672,0.000715,36.397508
+Električna energija,2015,renewable sources,,,,,11.512124,,,,11.512124,,,,0.0
+Električna energija,2015,renewable sources,,,,,3.197812,,,,3.197812,,,,0.0
+Električna energija,2016,renewable sources,,,,,11.610325,,,,11.610325,,,,0.0
+Električna energija,2016,renewable sources,,,,,3.225090,,,,3.225090,,,,0.0
+Električna energija,2017,renewable sources,,,,,11.625143,,,,11.625143,,,,0.0
+Električna energija,2017,renewable sources,,,,,3.229206,,,,3.229206,,,,0.0
+Električna energija,2018,renewable sources,,,,,11.675384,,,,11.675384,,,,0.0
+Električna energija,2018,renewable sources,,,,,3.243162,,,,3.243162,,,,0.0
+Električna energija,2019,renewable sources,,,,,12.147177,,,,12.147177,,,,0.0
+Električna energija,2019,renewable sources,,,,,3.374216,,,,3.374216,,,,0.0
+Električna energija,2020,renewable sources,,,,,12.456474,,,,12.456474,,,,0.0
+Električna energija,2020,renewable sources,,,,,3.460132,,,,3.460132,,,,0.0
+Električna energija,,renewable power plant,Hidroelektrane,,,,11.5,,,,11.5,,,,0.0
+Električna energija,,renewable power plant,Hidroelektrane,,,,3.194444,,,,3.194444,,,,0.0
+Električna energija,,renewable power plant,Vjetroelektrane,,,,9,,,,9,,,,0.0
+Električna energija,,renewable power plant,Vjetroelektrane,,,,2.5,,,,2.5,,,,0.0
+Električna energija,,renewable power plant,Fotonaponske elektrane,,,,32,,,,32,,,,0.0
+Električna energija,,renewable power plant,Fotonaponske elektrane,,,,8.8888,,,,8.8888,,,,0.0
+Električna energija,,renewable power plant,Geotermalne elektrane,,,,38,,,,38,,,,0.0
+Električna energija,,renewable power plant,Geotermalne elektrane,,,,10.555,,,,10.555,,,,0.0
+Električna energija,,renewable power plant,Bioplinske elektrane,,,,11,,,,11,,,,0.0
+Električna energija,,renewable power plant,Bioplinske elektrane,,,,3.0555,,,,3.0555,,,,0.0
+Električna energija,,renewable power plant,Elektrane na biomasu,,,,24.5,,,,24.5,,,,0.0
+Električna energija,,renewable power plant,Elektrane na biomasu,,,,6.8055,,,,6.8055,,,,0.0

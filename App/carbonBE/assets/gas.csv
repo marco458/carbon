@@ -1,0 +1,23 @@
+name,formula,activity
+co2,CO2,
+ch4,CH4,
+n2o,N2O,
+carbonEq,CO2eq,
+co2,CO2-upstream,upstream
+ch4,CH4-upstream,upstream
+n2o,N2O-upstream,upstream
+carbonEq,CO2eq-upstream,upstream
+co2,CO2-combustion,combustion
+ch4,CH4-combustion,combustion
+n2o,N2O-combustion,combustion
+carbonEq,CO2eq-combustion,combustion
+co2biog,CO2biog-combustion,combustion
+co2,CO2-waste treatment,waste treatment
+ch4,CH4-waste treatment,waste treatment
+n2o,N2O-waste treatment,waste treatment
+carbonEq,CO2eq-waste treatment,waste treatment
+HFC-23,HFC-23,
+HFC-32,HFC-32,
+HFC-125,HFC-125,
+HFC-134a,HFC-134a,
+HFC-143a,HFC-143a,

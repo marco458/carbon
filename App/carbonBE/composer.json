@@ -1,0 +1,122 @@
+{
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.2",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "api-platform/core": "^3.1.2",
+        "aws/aws-sdk-php": "^3.258.2",
+        "doctrine/annotations": "^1.14.3",
+        "doctrine/doctrine-bundle": "^2.8.2",
+        "doctrine/doctrine-migrations-bundle": "^3.2.2",
+        "doctrine/orm": "^2.14.1",
+        "easycorp/easyadmin-bundle": "^4.5.1",
+        "knplabs/knp-snappy-bundle": "^1.10",
+        "kreait/firebase-bundle": "^5.0",
+        "league/flysystem-aws-s3-v3": "^3.12.2",
+        "nelmio/cors-bundle": "^2.2",
+        "nesbot/carbon": "^2.66",
+        "oneup/flysystem-bundle": "^4.6",
+        "oro/doctrine-extensions": "^2.0",
+        "phpdocumentor/reflection-docblock": "^5.3",
+        "phpstan/phpdoc-parser": "^1.16",
+        "sentry/sentry-symfony": "^4.5",
+        "symfony/asset": "6.2.*",
+        "symfony/console": "6.2.*",
+        "symfony/dotenv": "6.2.*",
+        "symfony/expression-language": "6.2.*",
+        "symfony/filesystem": "6.2.*",
+        "symfony/flex": "^2.2.4",
+        "symfony/form": "6.2.*",
+        "symfony/framework-bundle": "6.2.*",
+        "symfony/http-client": "6.2.*",
+        "symfony/mailer": "6.2.*",
+        "symfony/mercure-bundle": "^0.3.5",
+        "symfony/property-access": "6.2.*",
+        "symfony/property-info": "6.2.*",
+        "symfony/proxy-manager-bridge": "6.2.*",
+        "symfony/runtime": "6.2.*",
+        "symfony/security-bundle": "6.2.*",
+        "symfony/serializer": "6.2.*",
+        "symfony/string": "6.2.*",
+        "symfony/twig-bundle": "6.2.*",
+        "symfony/validator": "6.2.*",
+        "symfony/yaml": "6.2.*"
+    },
+    "require-dev": {
+        "captainhook/captainhook": "^5.14.3",
+        "doctrine/doctrine-fixtures-bundle": "^3.4.2",
+        "friendsofphp/php-cs-fixer": "v3.13.0",
+        "nunomaduro/phpinsights": "^2.7",
+        "phpstan/phpstan": "^1.9.14",
+        "phpstan/phpstan-strict-rules": "^1.4.5",
+        "phpstan/phpstan-symfony": "^1.2.22",
+        "rector/rector": "^0.15.24",
+        "symfony/browser-kit": "6.2.*",
+        "symfony/css-selector": "6.2.*",
+        "symfony/debug-bundle": "6.2.*",
+        "symfony/lock": "6.2.*",
+        "symfony/maker-bundle": "^1.48",
+        "symfony/phpunit-bridge": "6.2.*",
+        "symfony/stopwatch": "6.2.*",
+        "symfony/var-dumper": "6.2.*",
+        "symfony/web-profiler-bundle": "6.2.*",
+        "zenstruck/browser": "^1.2",
+        "zenstruck/foundry": "^1.28"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "symfony/flex": true,
+            "symfony/runtime": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "php-http/discovery": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/App",
+            "Core\\": "src/Core"
+        }
+    },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts",
+            "@post-autoload-dump"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts",
+            "@post-autoload-dump"
+        ],
+        "cs-fixer-dry-run": "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --dry-run -v",
+        "cs-fixer-fix": "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix -v",
+        "phpstan": "vendor/bin/phpstan analyse --no-progress"
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": true,
+            "require": "6.2.*",
+            "docker": true
+        }
+    }
+}

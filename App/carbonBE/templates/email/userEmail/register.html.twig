@@ -1,0 +1,14 @@
+{% extends 'email/base.html.twig' %}
+
+{% set email_body_title = 'Aktivirajte svoj račun' %}
+{% set button_url = activateAccountUrl %}
+{% set button_text = 'Aktivirajte svoj račun' %}
+{% set email_body_text = 'Koristite donju poveznicu kako biste potvrdili svoju e-poštu i aktivirali svoj račun.' %}
+{% set email_body_bottom_text = "Ako niste zatražili ovu poveznicu, možete zanemariti ovu e-poštu." %}
+
+{% block email_body %}
+    {{ parent() }}
+{% endblock email_body %}
+
+{% block app_info_box %}
+{% endblock app_info_box %}

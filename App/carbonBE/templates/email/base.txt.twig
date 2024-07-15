@@ -1,0 +1,15 @@
+{% block email_body %}
+{{ email_body_title }}
+
+Dear {% if user.fullName|length > 0 %}{{ user.fullName }}{% else %}user{% endif %},
+
+{{ email_body_text|raw }}
+
+{% if button_url is defined and button_text is defined %}
+{{ button_url }}
+{{ button_text }}
+{% endif %}
+
+{{ email_body_bottom_text|raw }}
+{% endblock email_body %}
+

@@ -1,0 +1,3 @@
+sector,factor_id,amount,year,gas_activity,consumption,unit,location_id
+waste,181,123.45,2023,upstream,indirect,,18
+air,341,6542.32,2024,,direct,,19

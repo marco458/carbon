@@ -1,0 +1,37 @@
+api_platform:
+    title: 'Carbon'
+    version: 0.9.0
+    show_webby: false
+    mapping:
+        paths:
+            - '%kernel.project_dir%/src/Core/Entity'
+            - '%kernel.project_dir%/src/Core/Dto'
+
+    patch_formats:
+        json: ['application/json']
+    formats:
+#        jsonld:
+#            mime_types: ['application/ld+json']
+        json:
+            mime_types: ['application/json']
+        html:
+            mime_types: ['text/html']
+        multipart:
+            mime_types: ['multipart/form-data']
+    swagger:
+        versions: [3]
+        api_keys:
+            apiKey:
+                name: Authorization
+                type: header
+    mercure:
+        include_type: true
+    defaults:
+        pagination_client_items_per_page: true
+        pagination_items_per_page: 10
+        pagination_enabled: false
+        normalization_context:
+            skip_null_values: false
+        swagger_context:
+            servers:
+                - { url: http://localhost, description: API over HTTP }

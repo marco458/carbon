@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  db:
+    container_name: '${PROJECT_NAME}_db'
+    image: mysql:5.7
+    volumes:
+      - .:/app
+      - './.docker/db:/var/lib/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'P455W0RD'
+      TERM: '$TERM'
+    ports:
+      - '3306:3306'
+  mail:
+    container_name: '${PROJECT_NAME}_mail'
+    image: tophfr/mailcatcher
+    ports:
+      - '1080:80'
+  php:
+    build: .docker/php-fpm
+    container_name: '${PROJECT_NAME}_php'
+    working_dir: /app
+    volumes:
+      - .:/app
+      - ./.docker/php-fpm/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+   #   - ./.docker/php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    environment:
+      PHP_VERSION: '8.1'
+      COMPOSER_ALLOW_XDEBUG: '1'
+      PHP_IDE_CONFIG: 'serverName=docker_symfony'
+      TERM: '$TERM'
+  nginx:
+    image: nginx:1-alpine
+    container_name: '${PROJECT_NAME}_nginx'
+    volumes:
+      - .:/app
+      - /app/vendor
+      - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./.docker/nginx/log/:/var/log/nginx/
+      - /.docker/ssl:/etc/nginx/certs
+      - './.docker-config/php-xdebug-phpstorm.ini:/etc/php/xdebug-settings.ini'
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      PHP_VERSION: '8.1'
+      COMPOSER_ALLOW_XDEBUG: '1'
+      PHP_IDE_CONFIG: 'serverName=docker_symfony'
+      TERM: '$TERM'

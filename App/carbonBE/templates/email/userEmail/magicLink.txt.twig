@@ -1,0 +1,14 @@
+{% extends 'email/base.html.twig' %}
+
+{% set email_body_title = 'You requested a magic link' %}
+{% set button_url = url %}
+{% set button_text = 'Login via magic link' %}
+{% set email_body_text = 'Hello! You requested a magic link for logging in. You can use the link below to auto log into the application.' %}
+{% set email_body_bottom_text = "If you didn't request this link, you can ignore this email." %}
+
+{% block email_body %}
+    {{ parent() }}
+{% endblock email_body %}
+
+{% block app_info_box %}
+{% endblock app_info_box %}

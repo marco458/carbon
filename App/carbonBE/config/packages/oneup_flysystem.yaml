@@ -1,0 +1,16 @@
+# Read the documentation: https://github.com/1up-lab/OneupFlysystemBundle
+oneup_flysystem:
+    adapters:
+# uncomment if using classic filesystem
+#        default_adapter:
+#            local:
+#                location: '%kernel.cache_dir%/flysystem'
+        app.flysystem_adapter:
+            awss3v3:
+                client: app.s3_client
+                bucket: '%env(AWS_BUCKET)%'
+                prefix: '' # optionally use this: '%env(APP_ENV)%' -- to add 'environment' namespace to the upload path
+    filesystems:
+        default_filesystem:
+            adapter: app.flysystem_adapter
+            alias: League\Flysystem\Filesystem
